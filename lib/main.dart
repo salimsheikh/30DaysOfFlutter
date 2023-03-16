@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'pages/homepage.dart';
+import 'pages/loginpage.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -7,26 +9,17 @@ void main(List<String> args) {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomePage());
-  }
-}
-
-class HomePage extends StatelessWidget {
-  int days = 30;
-  String name = "Salim";
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Catalog"),
-      ),
-      drawer: Drawer(),
-      body: Center(
-        child: Container(
-          child: Text("Welcom to $days days of flutter by $name"),
-        ),
-      ),
+    return MaterialApp(
+      //home: LoginPage(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.deepOrange),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      initialRoute: "/home",
+      routes: {
+        "/": (context) => HomePage(),
+        "/home": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+      },
     );
   }
 }
