@@ -5,14 +5,26 @@ void main(List<String> args) {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: HomePage());
+  }
+}
+
+class HomePage extends StatelessWidget {
+  int days = 30;
+  String name = "Salim";
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Material(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Catalog"),
+      ),
+      drawer: Drawer(),
+      body: Center(
         child: Container(
-          child: Text("Hello World! My First Flutter App"),
+          child: Text("Welcom to $days days of flutter by $name"),
         ),
       ),
     );
