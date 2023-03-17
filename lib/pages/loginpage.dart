@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
         Image.asset("assets/images/login.png", fit: BoxFit.cover),
         SizedBox(height: 20.0),
         Text(
-          "Login",
+          "Login Page",
           style: TextStyle(
               fontSize: 24, color: Colors.blue, fontWeight: FontWeight.bold),
         ),
@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
                 child: Text("Login"),
                 style: TextButton.styleFrom(),
                 onPressed: () {
-                  print("Login Click");
+                  print("Login");
                 },
               )
             ],
