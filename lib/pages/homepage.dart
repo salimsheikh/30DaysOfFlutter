@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
 
   int days = 30;
   String name = "Salim Shaikh";
-
+  final dummList = List.generate(50, (index) => CatalogModel.items[0]);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +19,10 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
-          itemCount: CatalogModel.items.length,
+          itemCount: dummList.length,
           itemBuilder: (context, index) {
             return ItemWidget(
-              item: CatalogModel.items[index],
+              item: dummList[index],
             );
           },
         ),
