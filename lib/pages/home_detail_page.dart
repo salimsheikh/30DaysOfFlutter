@@ -16,9 +16,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(backgroundColor: Colors.transparent),
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.theme.canvasColor,
         bottomNavigationBar: Container(
-          color: Colors.white,
+          color: context.theme.cardColor,
           child: ButtonBar(
             alignment: MainAxisAlignment.spaceBetween,
             buttonPadding: EdgeInsets.zero,
@@ -29,7 +29,7 @@ class HomeDetailPage extends StatelessWidget {
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all(const StadiumBorder()),
                   backgroundColor:
-                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                      MaterialStateProperty.all(context.theme.primaryColorDark),
                 ),
                 child: "Add to Cart".text.make(),
               ).wh(150, 50)
@@ -50,11 +50,11 @@ class HomeDetailPage extends StatelessWidget {
                       arcType: VxArcType.CONVEY,
                       edge: VxEdge.TOP,
                       child: Container(
-                        color: Colors.white,
+                        color: context.theme.cardColor,
                         width: context.screenWidth,
                         child: Column(children: [
                           catalog.name.text.xl4.bold
-                              .color(MyTheme.darkBluishColor)
+                              .color(context.theme.primaryColorLight)
                               .make(),
                           catalog.desc.text
                               .textStyle(context.captionStyle)
@@ -66,7 +66,7 @@ class HomeDetailPage extends StatelessWidget {
                               .textStyle(context.captionStyle)
                               .make()
                               .p8()
-                        ]).p24(),
+                        ]).p32(),
                       )))
             ],
           ),
