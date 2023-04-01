@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utlis/routes.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 
-import 'pages/homepage.dart';
-import 'pages/loginpage.dart';
+import 'pages/home_page.dart';
+import 'pages/login_page.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());

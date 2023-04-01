@@ -17,22 +17,25 @@ class HomeDetailPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         backgroundColor: MyTheme.creamColor,
-        bottomNavigationBar: ButtonBar(
-          alignment: MainAxisAlignment.spaceBetween,
-          buttonPadding: EdgeInsets.zero,
-          children: [
-            "\$${catalog.price}".text.bold.lg.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all(const StadiumBorder()),
-                backgroundColor:
-                    MaterialStateProperty.all(MyTheme.darkBluishColor),
-              ),
-              child: "Buy".text.make(),
-            )
-          ],
-        ).pOnly(right: 8.0),
+        bottomNavigationBar: Container(
+          color: Colors.white,
+          child: ButtonBar(
+            alignment: MainAxisAlignment.spaceBetween,
+            buttonPadding: EdgeInsets.zero,
+            children: [
+              "\$${catalog.price}".text.bold.xl4.red800.make(),
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(const StadiumBorder()),
+                  backgroundColor:
+                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                ),
+                child: "Buy".text.make(),
+              ).wh(100, 50)
+            ],
+          ).p32(),
+        ),
         body: SafeArea(
           bottom: false,
           child: Column(
@@ -50,12 +53,14 @@ class HomeDetailPage extends StatelessWidget {
                         color: Colors.white,
                         width: context.screenWidth,
                         child: Column(children: [
-                          catalog.name.text.xl4.lg.bold
+                          catalog.name.text.xl4.bold
                               .color(MyTheme.darkBluishColor)
                               .make(),
                           catalog.desc.text
                               .textStyle(context.captionStyle)
+                              .xl
                               .make(),
+                          10.heightBox,
                         ]).py64(),
                       )))
             ],
