@@ -11,7 +11,7 @@ class CartModel {
   final List<int> _itemIds = [];
 
 /* Get Catalog */
-  CatalogModel get catalog => _catalog;
+  //CatalogModel get catalog => _catalog;
 
   set catalog(CatalogModel newCatalog) {
     //assert(newCatalog != null);

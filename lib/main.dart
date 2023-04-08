@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utlis/routes.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 import 'core/store.dart';
 import 'pages/cart_page.dart';
@@ -9,6 +10,7 @@ import 'pages/home_page.dart';
 import 'pages/login_page.dart';
 
 void main(List<String> args) {
+  setPathURLStrategy();
   runApp(VxState(
     store: MyStore(),
     child: const MyApp(),

@@ -12,6 +12,7 @@ import '../core/store.dart';
 import '../utlis/routes.dart';
 import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
+//import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,6 +35,12 @@ class _HomePageState extends State<HomePage> {
   loadData() async {
     //await Future.delayed(Duration(seconds: 5));
     var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+/*
+    const url =
+        "https://demos.infosofttech.com/flutter/flutter-api/catalog.json";
+    final response = await http.get(Uri.parse(url));
+    final catalogJson = response.body;
+*/
     var decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
 
@@ -60,7 +67,15 @@ class _HomePageState extends State<HomePage> {
             CupertinoIcons.cart,
             color: Colors.white,
           ),
-        ).badge(color: Colors.red, size: 20, count: cartData.items.length),
+        ).badge(
+          color: Vx.red500,
+          size: 22,
+          count: cartData.items.length,
+          textStyle: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: SafeArea(
         child: Container(
