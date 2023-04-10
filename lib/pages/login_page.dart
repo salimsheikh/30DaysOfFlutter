@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog/utlis/routes.dart';
+//import 'package:flutter_catalog/utlis/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 //import '../utlis/routes.dart';
 
@@ -21,8 +21,11 @@ class _LoginPageState extends State<LoginPage> {
       });
       await Future.delayed(const Duration(seconds: 1));
       // ignore: use_build_context_synchronously
-      //await Navigator.pushNamed(context, '/home');
-      await context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+      await Navigator.pushNamed(context, '/home');
+
+      //await context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+      //await context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+
       setState(() {
         changeButton = false;
       });
