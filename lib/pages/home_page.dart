@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart';
+//import 'package:http/http.dart' as http;
 import 'package:flutter_catalog/models/cart.dart';
 
 import 'package:flutter_catalog/models/catalog.dart';
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   String name = "Salim Shaikh";
 
   //final url = "https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
-  final url = "http://demos.infosofttech.com/flutter-api/catalog.json";
+  //final url = "http://demos.infosofttech.com/flutter-api/catalog.json";
 
   @override
   void initState() {
@@ -36,10 +36,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    //var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+    var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
 
-    final response = await http.get(Uri.parse(url));
-    final catalogJson = response.body;
+    //final response = await http.get(Uri.parse(url));
+    //final catalogJson = response.body;
 
     var decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
